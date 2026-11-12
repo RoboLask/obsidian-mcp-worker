@@ -1,5 +1,7 @@
 # MCP-сервер Obsidian для Cloudflare Workers
 
+[English](README.md) | **Українська**
+
 MCP-сервер (Model Context Protocol), який дає AI-асистентам доступ до вашого
 сховища Obsidian для читання й запису. Працює на Cloudflare Workers, зберігає
 нотатки в **Koofr** (або будь-якому WebDAV), авторизація — **OAuth 2.1**.
