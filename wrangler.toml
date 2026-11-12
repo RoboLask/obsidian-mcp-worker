@@ -1,0 +1,35 @@
+name = "obsidian-mcp"
+main = "src/index.ts"
+compatibility_date = "2025-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Do NOT put secrets in this file. Set them with:
+#   npx wrangler secret put KOOFR_EMAIL
+#   npx wrangler secret put KOOFR_APP_PASSWORD
+#   npx wrangler secret put OWNER_PASSWORD
+#
+# For local `wrangler dev`, create .dev.vars (see .dev.vars.example).
+
+[vars]
+# Path to the vault folder inside Koofr WebDAV.
+# For example "/Obsidian/Vault" writes to Koofr/Obsidian/Vault/...
+VAULT_PATH = "/Obsidian"
+# Time zone used for date fields and the daily note file name.
+DEFAULT_TZ = "Europe/Warsaw"
+# Daily write limit, so a leaked token cannot wreck the whole vault.
+DAILY_WRITE_LIMIT = "200"
+
+# --- KV namespaces --------------------------------------------------------
+# Create your own and paste the ids:
+#   npx wrangler kv namespace create MCP_COUNTER
+#   npx wrangler kv namespace create OAUTH_KV
+
+# Write counter for the daily limit.
+[[kv_namespaces]]
+binding = "MCP_COUNTER"
+id = "REPLACE_WITH_YOUR_MCP_COUNTER_ID"
+
+# OAuth tokens and grants (required by workers-oauth-provider).
+[[kv_namespaces]]
+binding = "OAUTH_KV"
+id = "REPLACE_WITH_YOUR_OAUTH_KV_ID"

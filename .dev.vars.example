@@ -1,0 +1,6 @@
+# Local secrets for `npx wrangler dev`.
+# Copy this file to .dev.vars. This template is committed; .dev.vars is not.
+
+KOOFR_EMAIL=you@example.com
+KOOFR_APP_PASSWORD=xxxx-xxxx-xxxx-xxxx
+OWNER_PASSWORD=password-for-the-browser-login
